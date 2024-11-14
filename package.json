@@ -1,0 +1,63 @@
+{
+  "name": "fast-deep-includes",
+  "version": "1.0.1-beta.0",
+  "description": "Check if a value includes in a deep object",
+  "keywords": [
+    "deep-includes",
+    "fast-deep-includes"
+  ],
+  "homepage": "https://github.com/noyobo/fast-deep-includes#readme",
+  "bugs": {
+    "url": "https://github.com/noyobo/fast-deep-includes/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noyobo/fast-deep-includes.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Youbao Nong",
+    "email": "noyobo@gmail.com",
+    "url": "https://github.com/noyobo"
+  },
+  "main": "./lib/index.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "build:lib": "tsc --project tsconfig.build.json",
+    "build:esm": "tsc --project tsconfig.build.json --module esnext --outDir esm",
+    "build": "npm run build:lib && npm run build:esm",
+    "clean": "rm -rf ./lib/ ./esm/",
+    "lint": "eslint ./src/ --fix",
+    "test": "vitest --coverage",
+    "test:watch": "vitest --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "*.ts": "npx @biomejs/biome check --fix"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.1",
+    "@swc/core": "^1.5.28",
+    "@swc/helpers": "^0.5.11",
+    "@types/node": "^20.14.2",
+    "@vitest/coverage-v8": "^2.0.5",
+    "conventional-changelog-conventionalcommits": "^7.0.2",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.6",
+    "prettier": "^3.3.2",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.4.5",
+    "vitest": "^2.0.5",
+    "benchmark": "^2.1.4"
+  },
+  "engines": {
+    "node": ">=12.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "packageManager": "pnpm@9.12.3"
+}
